@@ -11,7 +11,7 @@ public abstract class HealthProfessional {
         this.officeAddress = officeAddress;
     }
     public abstract void printInformation();
-        
+
     public int getId() {
         return id;
     }

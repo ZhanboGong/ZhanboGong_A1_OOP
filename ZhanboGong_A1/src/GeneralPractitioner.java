@@ -14,7 +14,7 @@ public class GeneralPractitioner extends HealthProfessional {
     public void printInformation()
     {
         System.out.println("================================");
-        System.out.println("Health Professional Information");
+        System.out.println("Health Professional Information(General Practitioner)");
         System.out.println("ID: " + getId());
         System.out.println("Name: " + getName());
         System.out.println("Office Address: " + getOfficeAddress());

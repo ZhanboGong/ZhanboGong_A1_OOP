@@ -13,14 +13,14 @@ public class Surgeon extends HealthProfessional{
     public void printInformation()
     {
         System.out.println("================================");
-        System.out.println("Health Professional Information");
+        System.out.println("Health Professional Information(Surgeon)");
         System.out.println("ID: " + getId());
         System.out.println("Name: " + getName());
         System.out.println("Office Address: " + getOfficeAddress());
         System.out.println("Surgical Field: " + surgicalField);
         System.out.println("================================");
-        System.out.println();
         System.out.println("The printing is complete. Check the printing information!");
+        System.out.println();
     }
 
     public String getSurgicalField() {
