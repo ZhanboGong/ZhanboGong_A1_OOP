@@ -1,14 +1,13 @@
-
 public class GeneralPractitioner extends HealthProfessional {
-    private boolean visitingServiceStatue;
+    private boolean visitingServiceStatus;
     public GeneralPractitioner()
     {
         super();
     }
-    public GeneralPractitioner(int id, String name, String officeAddress, boolean visitingServiceStatue)
+    public GeneralPractitioner(int id, String name, String officeAddress, boolean visitingServiceStatus)
     {
         super(id, name, officeAddress);
-        this.visitingServiceStatue = visitingServiceStatue;
+        this.visitingServiceStatus = visitingServiceStatus;
     }
 
     @Override
@@ -19,17 +18,17 @@ public class GeneralPractitioner extends HealthProfessional {
         System.out.println("ID: " + getId());
         System.out.println("Name: " + getName());
         System.out.println("Office Address: " + getOfficeAddress());
-        System.out.println("Visiting Service Statue: " + visitingServiceStatue);
+        System.out.println("Visiting Service Statue: " + visitingServiceStatus);
         System.out.println("================================");
-        System.out.println();
         System.out.println("The printing is complete. Check the printing information!");
+        System.out.println();
     }
 
     public boolean isVisitingService() {
-        return visitingServiceStatue;
+        return visitingServiceStatus;
     }
 
-    public void setVisitingService(boolean visitingServiceStatue) {
-        this.visitingServiceStatue = visitingServiceStatue;
+    public void setVisitingService(boolean visitingServiceStatus) {
+        this.visitingServiceStatus = visitingServiceStatus;
     }
 }
