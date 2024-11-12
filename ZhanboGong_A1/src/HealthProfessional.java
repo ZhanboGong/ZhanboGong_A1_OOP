@@ -1,4 +1,4 @@
-public class HealthProfessional {
+public abstract class HealthProfessional {
     private int id;
     private String name;
     private String officeAddress;
@@ -10,17 +10,8 @@ public class HealthProfessional {
         this.name = name;
         this.officeAddress = officeAddress;
     }
-    public void printInformation()
-    {
-        System.out.println("================================");
-        System.out.println("Health Professional Information");
-        System.out.println("ID: " + id);
-        System.out.println("Name: " + name);
-        System.out.println("Office Address: " + officeAddress);
-        System.out.println("================================");
-        System.out.println();
-        System.out.println("The printing is complete. Check the printing information!");
-    }
+    public abstract void printInformation();
+        
     public int getId() {
         return id;
     }
