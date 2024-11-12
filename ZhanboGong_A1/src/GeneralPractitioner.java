@@ -30,5 +30,6 @@ public class GeneralPractitioner extends HealthProfessional {
 
     public void setVisitingService(boolean visitingServiceStatus) {
         this.visitingServiceStatus = visitingServiceStatus;
+        System.out.println("The Visiting Service Status is successfully set to " + visitingServiceStatus);
     }
 }

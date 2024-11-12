@@ -26,7 +26,13 @@ public class HealthProfessional {
     }
 
     public void setId(int id) {
-        this.id = id;
+        if(id < 0){
+            System.out.println("Wrong Input: The ID must be a positive integer!");
+        }
+        else{
+            this.id = id;
+            System.out.println("The ID is successfully set to " + id);
+        }
     }
 
     public String getName() {
@@ -34,7 +40,13 @@ public class HealthProfessional {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if(name == null || name.trim().isEmpty()){
+            System.out.println("Wrong Input: Name cannot be empty and null!");
+        }
+        else{
+            this.name = name;
+            System.out.println("The name is successfully set to " + name);
+        }
     }
 
     public String getOfficeAddress() {
@@ -42,6 +54,12 @@ public class HealthProfessional {
     }
 
     public void setOfficeAddress(String officeAddress) {
-        this.officeAddress = officeAddress;
+        if(officeAddress == null || officeAddress.trim().isEmpty()){
+            System.out.println("Wrong Input: Office Address cannot be empty and null");
+        }
+        else{
+            this.officeAddress = officeAddress;
+            System.out.println("The Office Address is successfully set to " + officeAddress);
+        }
     }
 }

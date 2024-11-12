@@ -28,6 +28,12 @@ public class Surgeon extends HealthProfessional{
     }
 
     public void setSurgicalField(String surgicalField) {
-        this.surgicalField = surgicalField;
+        if(surgicalField == null || surgicalField.trim().isEmpty()){
+            System.out.println("Wrong Input: Surgical Field cannot be empty and null!");
+        }
+        else{
+            this.surgicalField = surgicalField;
+            System.out.println("The Surgical Field is successfully set to " + surgicalField);
+        }
     }
 }
