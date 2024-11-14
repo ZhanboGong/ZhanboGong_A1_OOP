@@ -1,4 +1,5 @@
 public class Appointment {
+    private int appointmentID;
     private String name;
     private String mobilePhone;
     private String timeSlot;
@@ -8,7 +9,8 @@ public class Appointment {
     {
 
     }
-    public Appointment(String name, String mobilePhone, String timeSlot, HealthProfessional healthProfessional) {
+    public Appointment(int appointmentID, String name, String mobilePhone, String timeSlot, HealthProfessional healthProfessional) {
+        this.appointmentID = appointmentID;
         this.name = name;
         this.mobilePhone = mobilePhone;
         this.timeSlot = timeSlot;
@@ -18,6 +20,7 @@ public class Appointment {
     public void printInformation()
     {
         System.out.println("================================");
+        System.out.println("Appointment ID " + appointmentID);
         System.out.println("Patient Name: " + name);
         System.out.println("Mobile Phone: " + mobilePhone);
         System.out.println("Doctor: " + healthProfessional.getName());
@@ -31,7 +34,13 @@ public class Appointment {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if(name == null || name.trim().isEmpty()){
+            System.out.println("Wrong Input: name cannot be empty and null!");
+        }
+        else{
+            System.out.println("The name is successfully set to " + name);
+            this.name = name;
+        }
     }
 
     public String getMobilePhone() {
@@ -57,4 +66,9 @@ public class Appointment {
     public void setHealthProfessional(HealthProfessional healthProfessional) {
         this.healthProfessional = healthProfessional;
     }
+
+    public int getAppointmentID() {
+        return appointmentID;
+    }
+
 }
