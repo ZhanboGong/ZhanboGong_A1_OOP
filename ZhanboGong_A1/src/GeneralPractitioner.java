@@ -1,5 +1,6 @@
 public class GeneralPractitioner extends HealthProfessional {
     private boolean visitingServiceStatus;
+    private final String professionalType = "General Practitioner";
     public GeneralPractitioner()
     {
         super();
@@ -14,8 +15,9 @@ public class GeneralPractitioner extends HealthProfessional {
     public void printInformation()
     {
         System.out.println("================================");
-        System.out.println("Health Professional Information(General Practitioner)");
+        System.out.println("Health Professional Information");
         System.out.println("ID: " + getId());
+        System.out.println("Type: " + professionalType);
         System.out.println("Name: " + getName());
         System.out.println("Office Address: " + getOfficeAddress());
         System.out.println("Visiting Service Statue: " + visitingServiceStatus);
@@ -31,5 +33,14 @@ public class GeneralPractitioner extends HealthProfessional {
     public void setVisitingService(boolean visitingServiceStatus) {
         this.visitingServiceStatus = visitingServiceStatus;
         System.out.println("The Visiting Service Status is successfully set to " + visitingServiceStatus);
+    }
+
+    public String getProfessionalType(){
+        return professionalType;
+    }
+
+    @Override
+    public String toString(){
+        return "ID: " + getId() + "|" + "Name：" + getName();
     }
 }
