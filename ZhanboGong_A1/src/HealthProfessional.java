@@ -6,9 +6,9 @@ public abstract class HealthProfessional {
     {}
     public HealthProfessional(int id, String name, String officeAddress)
     {
-        this.id = id;
-        this.name = name;
-        this.officeAddress = officeAddress;
+        setId(id);
+        setName(name);
+        setOfficeAddress(officeAddress);
     }
     public abstract void printInformation();
 
@@ -17,8 +17,13 @@ public abstract class HealthProfessional {
     }
 
     public void setId(int id) {
-        if(id < 0){
-            System.out.println("Wrong Input: The ID must be a positive integer!");
+        if(id <= 0){
+            if(this.id == 0){
+                System.out.println("Wrong Input: The ID must be a positive integer! The current ID is set to 0");
+            }
+            else{
+                System.out.println("Wrong Input: The ID must be a positive integer! ID update failed, current ID is " + this.id);
+            }
         }
         else{
             this.id = id;
@@ -32,7 +37,13 @@ public abstract class HealthProfessional {
 
     public void setName(String name) {
         if(name == null || name.trim().isEmpty()){
-            System.out.println("Wrong Input: Name cannot be empty and null!");
+            if(this.name == null){
+                System.out.println("Wrong Input: Name cannot be empty and null! The current name is set to 'To be set'");
+                this.name = "To be set";
+            }
+            else{
+                System.out.println("Wrong Input: Name cannot be empty and null! Name update failed, current name is " + this.name);
+            }
         }
         else{
             this.name = name;
@@ -46,7 +57,13 @@ public abstract class HealthProfessional {
 
     public void setOfficeAddress(String officeAddress) {
         if(officeAddress == null || officeAddress.trim().isEmpty()){
-            System.out.println("Wrong Input: Office Address cannot be empty and null");
+            if(this.officeAddress == null){
+                System.out.println("Wrong Input: Office Address cannot be empty and null! The current office address is set to 'To be set'");
+                this.officeAddress = "To be set";
+            }
+            else{
+                System.out.println("Wrong Input: Office Address cannot be empty and null! Office Address update failed, current office address is " + this.officeAddress);
+            }
         }
         else{
             this.officeAddress = officeAddress;
