@@ -12,7 +12,7 @@ public class Surgeon extends HealthProfessional implements SurgicalArrangement{
     // Unique identifiers for surgical records to facilitate automatic incrementing
     private int surgeryID = 1;
     // Describe the type of the doctor as "Surgeon"
-    private final String professionalType = "Surgeon";
+    private static final String professionalType = "Surgeon";
     // Represents the surgical field of the Surgeon(Private properties)
     private String surgicalField;
     // No-argument constructors
@@ -93,7 +93,7 @@ public class Surgeon extends HealthProfessional implements SurgicalArrangement{
     public void printInformation()
     {
         System.out.println("================================");
-        System.out.println("Health Professional Information(Surgeon)");
+        System.out.println("Health Professional Information");
         System.out.println("ID: " + getId());
         System.out.println("Type: " + professionalType);
         System.out.println("Name: " + getName());
