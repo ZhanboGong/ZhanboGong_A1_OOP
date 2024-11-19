@@ -1,4 +1,8 @@
-public class Surgeon extends HealthProfessional{
+import java.util.ArrayList;
+
+public class Surgeon extends HealthProfessional implements SurgicalArrangement{
+    private final ArrayList<String> surgerys = new ArrayList<>();
+    private int surgeryID = 1;
     private final String professionalType = "Surgeon";
     private String surgicalField;
     public Surgeon()
@@ -10,6 +14,45 @@ public class Surgeon extends HealthProfessional{
         super(id, name, officeAddress);
         setSurgicalField(surgicalField);
     }
+
+    @Override
+    public void recordSurgery(String patient, String date, String address){
+        String surgeryRecord = surgeryID++ + ":" + patient + " underwent surgery in the " + address + " on " + date + ".";
+        surgerys.add(surgeryRecord);
+        System.out.println("The surgery record was added successfully!");
+    }
+
+    @Override
+    public void cancelSurgery(String surgeryID){
+        boolean findingStatus = false;
+        for(int i = 0; i < surgerys.size(); i++){
+            if(surgerys.get(i).split(":")[0].equals(surgeryID)){
+                surgerys.remove(i);
+                findingStatus = true;
+                System.out.println("The surgical record with ID " + surgeryID + " has been deleted");
+                break;
+            }
+        }
+        if(!findingStatus){
+            System.out.println("Sorry, no operation record with id " +  surgeryID  + " was found");
+        }
+    }
+
+    @Override
+    public void getSurgeryInformation(String surgeryID){
+        boolean findingStatus = false;
+        for(int i = 0; i < surgerys.size(); i++){
+            if(surgerys.get(i).split(":")[0].equals(surgeryID)){
+                System.out.println(surgerys.get(i));
+                findingStatus = true;
+                break;
+            }
+        }
+        if(!findingStatus){
+            System.out.println("Sorry, no operation record with id " +  surgeryID  + " was found");
+        }
+    }
+
     @Override
     public void printInformation()
     {
